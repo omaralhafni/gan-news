@@ -15,7 +15,7 @@ export const Category = () => {
   useEffect(() => {
     var currentDate = new Date().toJSON().slice(0, 10);
     fetch(
-      `https://newsapi.org/v2/everything?q=${params.category}&from=${currentDate}&sortBy=popularity&pageSize=${total}&language=ar&apiKey=269d8db6636e478da7fce16e4eb68582`
+      `https://newsapi.org/v2/everything?q=${params.category}&from=${currentDate}&sortBy=popularity&pageSize=${total}&apiKey=269d8db6636e478da7fce16e4eb68582`
     )
       .then((response) => response.json())
       .then((res) => {

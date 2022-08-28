@@ -39,7 +39,7 @@ export const Popular = () => {
 
                 <div className="popular-tags-container d-grid">
                     {data.map((element, index) =>
-                        <Link key={index} to={`category/ar/${element.name}`} className="article">
+                        <Link key={index} to={`category/${element.name}`} className="article">
                             <span className="tag-name">#{element.name}</span>
                             <img
                                 src={element.image}

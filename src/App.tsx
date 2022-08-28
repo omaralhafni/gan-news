@@ -10,7 +10,7 @@ function App() {
       <NaveBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="category/:langue/:category" element={<Category />} />
+        <Route path="category/:category" element={<Category />} />
       </Routes>
     </div>
   );
