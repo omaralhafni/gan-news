@@ -1,35 +1,8 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import { dataCategory } from '../../utils/data'
 
 export const Popular = () => {
-    const data = [
-        {
-            name: "Nature",
-            image: "assets/images/tags/nature.jpg"
-        },
-        {
-            name: "Fitness",
-            image: "assets/images/tags/fitness.jpg"
-        },
-        {
-            name: "Travel",
-            image: "assets/images/tags/travel.jpg"
-        },
-        {
-            name: "Food",
-            image: "assets/images/tags/food.jpg"
-        },
-        {
-            name: "Technology",
-            image: "assets/images/tags/technology.jpg"
-        },
-        {
-            name: "Health",
-            image: "assets/images/tags/health.jpg"
-        },
 
-
-    ]
     return (
         <section className="popular-tags section">
             <div className="container">
@@ -38,7 +11,7 @@ export const Popular = () => {
                 </h2>
 
                 <div className="popular-tags-container d-grid">
-                    {data.map((element, index) =>
+                    {dataCategory.map((element, index) =>
                         <Link key={index} to={`category/${element.name}`} className="article">
                             <span className="tag-name">#{element.name}</span>
                             <img
