@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // import { useSearchParams } from "react-router-dom";
-import { handleDateTime } from "../../utils/date";
+import { currentDate, handleDateTime } from "../../utils/date";
 
 export const Hero = () => {
   const [data, setData] = useState([]);
@@ -9,8 +9,7 @@ export const Hero = () => {
 
   useEffect(() => {
     fetch(
-      "https://newsapi.org/v2/everything?q=Trending&sortBy=popularity&pageSize=9&apiKey=269d8db6636e478da7fce16e4eb68582"
-      // "https://newsapi.org/v2/everything?q=Trending&from=2022-08-14&to=2022-08-14&sortBy=popularity&pageSize=9&apiKey=269d8db6636e478da7fce16e4eb68582"
+      `https://newsapi.org/v2/everything?q=Trending&from=${currentDate}&sortBy=popularity&pageSize=9&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
     )
       .then((response) => response.json())
       .then((data) => setData(data.articles));

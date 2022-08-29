@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { currentDate } from "../../utils/date";
 
 interface IStateCategoryData {
   urlToImage: string;
@@ -13,9 +14,8 @@ export const Category = () => {
   const [ImageData, setImageData] = useState();
 
   useEffect(() => {
-    var currentDate = new Date().toJSON().slice(0, 10);
     fetch(
-      `https://newsapi.org/v2/everything?q=${params.category}&from=${currentDate}&sortBy=popularity&pageSize=${total}&apiKey=269d8db6636e478da7fce16e4eb68582`
+      `https://newsapi.org/v2/everything?q=${params.category}&from=${currentDate}&sortBy=popularity&pageSize=${total}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
     )
       .then((response) => response.json())
       .then((res) => {
@@ -28,7 +28,7 @@ export const Category = () => {
         setData(newData);
       });
     fetch(
-      `https://api.unsplash.com/search/photos/?query=${params.category}&per_page=1&client_id=sGdh6euSud9jG0srk4rCFFmtrUVe4AfVXuUI_9YiQHs`
+      `https://api.unsplash.com/search/photos/?query=${params.category}&per_page=1&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`
     )
       .then((response) => response.json())
       .then((res) => setImageData(res?.results[0]?.urls?.full));
@@ -89,9 +89,9 @@ export const Category = () => {
           </section>
         </>
       ) : (
-        <>
-        <p>There is no news </p>
-        </>
+        <div className="no-data">
+          <p>There is no News </p>
+        </div>
       )}
     </>
   );
