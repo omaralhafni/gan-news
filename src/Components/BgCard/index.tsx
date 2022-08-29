@@ -1,3 +1,5 @@
+import { handleDateTime } from "../../utils/date";
+
 interface IPropsBgCard {
   element: {
     url: string;
@@ -23,7 +25,7 @@ export const BgCard = ({ element }: IPropsBgCard) => {
         <div className="article-data">
           <span>{element?.author}</span>
           <span className="article-data-spacer"></span>
-          <span>{element?.publishedAt?.slice(0, 10)}</span>
+          <span>{handleDateTime(element.publishedAt)}</span>
         </div>
 
         <h3 className="title article-title">{element?.title}</h3>
