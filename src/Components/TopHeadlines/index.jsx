@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { BgCard } from '../BgCard';
 
 export const TopHeadlines = () => {
@@ -22,7 +22,9 @@ export const TopHeadlines = () => {
 
                 <div className="older-posts-grid-wrapper d-grid">
                     {data?.map((element, index) =>
-                        <BgCard key={index} element={element} />
+                        <Fragment key={index}>
+                            <BgCard element={element} />
+                        </Fragment>
                     )}
                 </div>
             </div>

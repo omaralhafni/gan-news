@@ -1,5 +1,4 @@
 interface IPropsBgCard {
-  key: number;
   element: {
     url: string;
     urlToImage: string;
@@ -9,9 +8,9 @@ interface IPropsBgCard {
     content: string;
   };
 }
-export const BgCard = ({ key, element }: IPropsBgCard) => {
+export const BgCard = ({ element }: IPropsBgCard) => {
   return (
-    <a key={key} href={element?.url} className="article d-grid">
+    <a href={element?.url} className="article d-grid">
       <div className="older-posts-article-image-wrapper">
         <img
           src={element?.urlToImage}

@@ -6,9 +6,9 @@ export const Footer = () => {
         <footer className="footer section">
             <div className="footer-container container d-grid">
                 <div className="company-data">
-                    <a href="./index.html">
+                    <Link to="/">
                         <h2 className="logo">Gan News</h2>
-                    </a>
+                    </Link>
                     <p className="company-description">
                         News site specialized in providing the latest local and international news.
                     </p>
@@ -26,7 +26,7 @@ export const Footer = () => {
 
                     <ul className="footer-list list">
                         {dataCategory.map((element, index) =>
-                            <li className="list-item">
+                            <li key={index} className="list-item">
                                 <Link key={index} to={`category/${element.name}`} className="list-link">
                                     {element.name}
                                 </Link>
