@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { currentDate } from "../../utils/date";
+import "./style.css";
 
 interface IStateCategoryData {
   urlToImage: string;

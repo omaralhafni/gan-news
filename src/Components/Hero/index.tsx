@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 // import { useSearchParams } from "react-router-dom";
 import { currentDate, handleDateTime } from "../../utils/date";
+import "./style.css";
 
 interface IStateHero {
   url: string;

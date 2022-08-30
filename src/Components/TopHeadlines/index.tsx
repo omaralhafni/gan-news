@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { BgCard } from "../BgCard";
+import "./style.css";
 
 export const TopHeadlines = () => {
   const [data, setData] = useState([]);
